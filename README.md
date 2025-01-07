@@ -63,3 +63,24 @@ Authorization: Bearer {{authToken}}
     {"role": "user", "content": "Can you tell me the time, please?"}
 ]}
 ```
+This gives a JSON response in the format below when working correctly:
+```
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json-lines
+Date: Tue, 07 Jan 2025 16:11:50 GMT
+Server: uvicorn
+Transfer-Encoding: chunked
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+x-ms-middleware-request-id: b9c73f3f-526f-480c-a05d-87b41a33c482
+
+{}
+{}
+{"id": "chatcmpl-An6TNTuhU07SA0ow4iyrYVbD37oNZ", "model": "gpt-4o-2024-05-13", "created": 1736266317, "object": "chat.completion.chunk", "choices": [{"messages": [{"role": "assistant", "content": "Oh"}]}], "history_metadata": {}, "apim-request-id": "a1eb9495-1bbf-4307-87e1-f73277c244ae"}
+{"id": "chatcmpl-An6TNTuhU07SA0ow4iyrYVbD37oNZ", "model": "gpt-4o-2024-05-13", "created": 1736266317, "object": "chat.completion.chunk", "choices": [{"messages": [{"role": "assistant", "content": " sure"}]}], "history_metadata": {}, "apim-request-id": "a1eb9495-1bbf-4307-87e1-f73277c244ae"}
+{"id": "chatcmpl-An6TNTuhU07SA0ow4iyrYVbD37oNZ", "model": "gpt-4o-2024-05-13", "created": 1736266317, "object": "chat.completion.chunk", "choices": [{"messages": [{"role": "assistant", "content": ","}]}], "history_metadata": {}, "apim-request-id": "a1eb9495-1bbf-4307-87e1-f73277c244ae"}
+
+```
+
+# Summary
+By default when easy auth is enabled for an App Service an access token generated externally cannot access any API inside the App Service. This is because the App Service by default will only accept an audience that is exactly the Client ID of the Entra App Registration associated with the App Service. Adding an extra allowed audience of the form "api://Client_ID" will allow APIs hosted in the App Services to be called externally.
