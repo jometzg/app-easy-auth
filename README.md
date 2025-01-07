@@ -6,7 +6,7 @@ Sometimes it is useful to call APIs hosted in Azure App Service that has been co
 
 By default Easy Auth allows the web application itself to be authenticated in a browser. This redirects to Microsoft Entra to then allow the user to enter their credentials. The application is then authenticated and any APIs hosted in the App Service can then be used. 
 
-Sometimes it may be useful to call these APIs programmatically from code, VS Code or Postman. This opens up the possibility of driving the APIs hosted in App Service programmatically.
+Sometimes it may be useful to call these APIs programmatically from code, VS Code or Postman. This opens up the possibility of driving the APIs hosted in App Service programmatically. This can be very useful for testing generative AI solution accelerators automatically.
 
 ## The Problem
 When attempting to access the App Service hosted APIs, firstly an authentication flow needs to be executed to gain an access token and then to present this access token to the API in the App Service. In the App Service's default configuration, this results in an error where the app reports that that the incorrect audience is being offered. This means that any API hosted in that App Service cannot be called.
