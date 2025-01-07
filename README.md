@@ -12,7 +12,7 @@ Sometimes it may be useful to call these APIs programmatically from code, VS Cod
 When attempting to access the App Service hosted APIs, firstly an authentication flow needs to be executed to gain an access token and then to present this access token to the API in the App Service. In the App Service's default configuration, this results in an error where the app reports that that the incorrect audience is being offered. This means that any API hosted in that App Service cannot be called.
 
 ## Understanding What is Happening
-In an OAuth flow, the scope needs to be set for a request for an access token. The REST call for this is:
+In an OAuth flow, the scope needs to be set for a request for an access token. There are a numnber of OAuth flows, but this example uses the [client credentials flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow)  The REST call for this is:
 
 ```
 ### get a bearer token
