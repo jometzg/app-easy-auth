@@ -1,4 +1,4 @@
-# Azure App Service Easy Autyh
+# Calling APIs hosted in Azure App Service protected by Easy Auth
 A demonstration of how to amend an App Service protected with Easy Auth to be called remotely
 
 ## The Need
