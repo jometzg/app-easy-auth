@@ -12,7 +12,7 @@ POST https://login.microsoftonline.com/{{directoryid}}/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id={{clientid}}
-&scope=api://03ca27bb-e1db-493d-8a38-bff895e7d6c3/.default
+&scope=api://{{clientid}}/.default
 &client_secret={{secret}}
 &grant_type=client_credentials
 
