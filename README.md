@@ -2,7 +2,7 @@
 A demonstration of how to amend an App Service protected with Easy Auth to be called remotely
 
 ## The Need
-Sometimes it is useful to call APIs hosted in Azure App Service that has been configured to use "Easy Auth" https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization. 
+Sometimes it is useful to call APIs hosted in Azure App Service that has been configured to use [Easy Auth](https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization). 
 
 By default Easy Auth allows the web application itself to be authenticated in a browser. This redirects to Microsoft Entra to then allow the user to enter their credentials. The application is then authenticated and any APIs hosted in the App Service can then be used. 
 
